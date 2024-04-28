@@ -1,10 +1,10 @@
-import React from 'react'
+
 import { Blog } from '../hooks'
 import { Appbar } from './Appbar'
 import { Avatar } from './BlogCard'
 // import Blog from '../hooks/index'
 
-export const FullBlogs = ({ blog }: { blog: Blog }) => {
+export const FullBlogs = ({ blog }: { blog: Blog | any }) => {
     return (
         <div >
             <Appbar />

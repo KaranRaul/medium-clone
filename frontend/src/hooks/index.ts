@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react"
-import { useSearchParams } from "react-router-dom"
+
 import { BACKEND_URL } from "../config";
 
 export interface Blog {
@@ -10,13 +10,10 @@ export interface Blog {
     "author": {
         "name": string;
     };
-
-
 }
 
 
-export const useBlog = ({ id }: { id: string }) => {
-    console.log(typeof id)
+export const useBlog = ({ id }: { id: any }) => {
     const [loading, setLoading] = useState(true);
     const [blog, setBlog] = useState<Blog>();
 

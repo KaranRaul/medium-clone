@@ -27,7 +27,7 @@ export const Blogs = () => {
             <div className="max-w-xl">
 
                 {blogs.length > 0 && blogs.map(blog => <BlogCard id={blog.id} key={blog.id} authorName={blog.author.name}
-                    publishedDate={blog.publishedDate}
+                    publishedDate={"2nd feb 2024"}
                     title={blog.title}
                     content={blog.content} />
 

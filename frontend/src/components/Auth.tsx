@@ -1,7 +1,8 @@
 import { SignupInput } from "@karan_raul/medium-common";
 import axios from "axios";
-import { useState } from "react";
-import { Link, Navigate, useNavigate } from "react-router-dom"
+import { ChangeEvent, useState } from "react";
+import { Link, useNavigate } from "react-router-dom"
+
 import { BACKEND_URL } from "../config";
 export const Auth = ({ type }: { type: "signin" | "signup" }) => {
 
@@ -38,9 +39,9 @@ export const Auth = ({ type }: { type: "signin" | "signup" }) => {
                         </Link>
                     </div>
                     <div className="pt-8">
-                        {type === "signup" && < LabelledInput label="Name" placeholder="Name" onChange={(e) => { setPostInputs({ ...postInputs, name: e.target.value }) }} />}
-                        <LabelledInput label="Email" placeholder="Doe" onChange={(e) => { setPostInputs({ ...postInputs, email: e.target.value }) }} />
-                        <LabelledInput label="Password" type="password" placeholder="Password" onChange={(e) => { setPostInputs({ ...postInputs, password: e.target.value }) }} />
+                        {type === "signup" && < LabelledInput label="Name" placeholder="Name" onChange={(e: ChangeEvent<HTMLInputElement>) => { setPostInputs({ ...postInputs, name: e.target.value }) }} />}
+                        <LabelledInput label="Email" placeholder="Doe" onChange={(e: ChangeEvent<HTMLInputElement>) => { setPostInputs({ ...postInputs, email: e.target.value }) }} />
+                        <LabelledInput label="Password" type="password" placeholder="Password" onChange={(e: ChangeEvent<HTMLInputElement>) => { setPostInputs({ ...postInputs, password: e.target.value }) }} />
                         <button type="button" onClick={sendRequest}
                             className="text-white w-full p-2.5 mt-4  bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700">{type === "signin" ? "Sing In" : "Sing Up"}</button>
 
