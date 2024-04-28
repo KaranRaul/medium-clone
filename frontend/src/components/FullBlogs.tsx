@@ -4,7 +4,7 @@ import { Appbar } from './Appbar'
 import { Avatar } from './BlogCard'
 // import Blog from '../hooks/index'
 
-export const FullBlogs = ({ blog }: { blog: Blog | any }) => {
+export const FullBlogs = ({ blog }: { blog: Blog }) => {
     return (
         <div >
             <Appbar />

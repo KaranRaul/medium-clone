@@ -6,10 +6,12 @@ import { FullBlogSkeleton } from '../components/BlogSkeleton';
 import { Appbar } from '../components/Appbar';
 
 export const Blog = () => {
-    const id = useParams<{ id: string }>();
-    const { loading, blog } = useBlog({ id });
+    const { id } = useParams();
+    const { loading, blog } = useBlog({
+        id: id || ""
+    });
     // console.log(blog.title)
-    if (loading) return <div>
+    if (loading || !blog) return <div>
         <Appbar />
         <FullBlogSkeleton />
     </div>
@@ -17,8 +19,6 @@ export const Blog = () => {
     return (
         <div>
             <FullBlogs blog={blog} />
-
-
         </div>
     )
 }
