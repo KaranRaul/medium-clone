@@ -2,12 +2,17 @@ import { Appbar } from "../components/Appbar"
 import axios from "axios";
 import { BACKEND_URL } from "../config";
 import { useNavigate } from "react-router-dom";
-import { ChangeEvent, useState } from "react";
+import { ChangeEvent, useEffect, useState } from "react";
 
 export const Publish = () => {
     const [title, setTitle] = useState("");
     const [description, setDescription] = useState("");
     const navigate = useNavigate();
+
+    useEffect(() => {
+        if (!localStorage.getItem('token'))
+            navigate('/')
+    }, [])
 
     return <div>
         <Appbar />
