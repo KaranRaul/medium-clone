@@ -52,7 +52,7 @@ export const useBlogs = () => {
         })
             .then(response => {
                 console.log(response.data)
-                setBlogs(response.data);
+                setBlogs(response.data?.reverse());
                 setLoading(false);
             });
     }, []);
