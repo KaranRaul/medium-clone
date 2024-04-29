@@ -56,8 +56,8 @@ export const BlogCard = ({
 //     </div>
 // }
 
-export function Avatar({ name = 'U', size = 6 }: { name?: string, size?: any }) {
-    return <div className={`relative inline-flex items-center justify-center w-${size.toString()} h-${size.toString()}  overflow-hidden bg-gray-100 rounded-full dark:bg-gray-600`} >
+export function Avatar({ name = 'U' }: { name?: string }) {
+    return <div className={`relative inline-flex items-center justify-center w-6 h-6 overflow-hidden bg-gray-100 rounded-full dark:bg-gray-600`} >
         <span className="font-sm text-gray-600 dark:text-gray-300">{name[0]}</span>
     </div>
 }
